@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">JIAN_SHU</string>
+    <string name="find_no_result">没有找到相应的资源</string>
 
 
     <string-array name="tabs">
@@ -7,5 +8,23 @@
         <item>发现</item>
         <item>消息</item>
         <item>我的</item>
+    </string-array>
+
+    <string-array name="child_tabs">
+
+        <item>简友圈</item>
+        <item>作者</item>
+        <item>专题</item>
+        <item>连载</item>
+        <item>文集</item>
+        <item>推送更新</item>
+        <item>全部关注</item>
+    </string-array>
+
+    <string-array name="child_my_tabs">
+        <item>文章</item>
+        <item>动态</item>
+        <item>最新评论</item>
+        <item>热门</item>
     </string-array>
 </resources>

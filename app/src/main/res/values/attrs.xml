@@ -36,4 +36,5 @@
         <attr name="min_score" format="integer"/>
         <attr name="broken_line_color" format="color"/>
     </declare-styleable>
+
 </resources>

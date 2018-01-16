@@ -34,4 +34,9 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'org.jsoup:jsoup:1.9.2'//jsoup网络爬虫
+    //http://www.weyye.me/detail/color-track-tablayout/
+    compile 'me.weyye.ColorTrackTabLayout:library:1.0.1'
+
+    compile "io.reactivex.rxjava2:rxjava:2.1.8"//Rxjava异步任务
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
 }

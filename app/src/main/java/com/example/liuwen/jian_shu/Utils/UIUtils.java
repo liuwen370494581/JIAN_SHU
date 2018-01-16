@@ -23,11 +23,13 @@ public class UIUtils {
         showToast(msg, Toast.LENGTH_SHORT);
     }
 
-    public static void showToast(String msg, int duration) {
+
+    public static void showToast(String message, int duration) {
         if (mToast == null) {
-            mToast = Toast.makeText(getContext(), "", duration);
+            mToast = Toast.makeText(getContext(), message, Toast.LENGTH_LONG);
+        } else {
+            mToast.setText(message);
         }
-        mToast.setText(msg);
         mToast.show();
     }
 
