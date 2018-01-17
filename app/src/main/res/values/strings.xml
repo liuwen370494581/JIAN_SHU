@@ -2,7 +2,6 @@
     <string name="app_name">JIAN_SHU</string>
     <string name="find_no_result">没有找到相应的资源</string>
 
-
     <string-array name="tabs">
         <item>关注</item>
         <item>发现</item>
