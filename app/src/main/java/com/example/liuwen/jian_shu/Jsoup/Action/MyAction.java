@@ -41,22 +41,4 @@ public class MyAction {
             }
         });
     }
-
-    public static void searchMyDateCover(final Context context, final String url, final ActionCallBack callBack) {
-        Observable.create(new ObservableOnSubscribe<List<String>>() {
-            @Override
-            public void subscribe(ObservableEmitter<List<String>> e) throws Exception {
-                e.onNext(HtmlParserUtil.searchMyDataCover(url));
-            }
-        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<String>>() {
-            @Override
-            public void accept(@NonNull List<String> models) throws Exception {
-                if (models != null && models.size() != 0) {
-                    callBack.ok(models);
-                } else {
-                    callBack.failed(context.getResources().getString(R.string.find_no_result));
-                }
-            }
-        });
-    }
 }

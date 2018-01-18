@@ -18,13 +18,13 @@
             android:layout_marginTop="15dp"
             android:background="@color/white">
 
-            <com.example.liuwen.jian_shu.Widget.CircleImageView
+            <ImageView
                 android:id="@+id/f_my_touxiang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="12dp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_default_gray_avatar" />
 
             <TextView
                 android:id="@+id/f_my_userName"

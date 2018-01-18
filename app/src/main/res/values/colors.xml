@@ -6,6 +6,7 @@
 
     <color name="white">#FFFFFF</color>
     <color name="bg_color">#f0eff4</color>
+    <color name="pull_refresh_bg">#F3F5F4</color>
 
 
     <color name="text_color_33">#333333</color>

@@ -15,6 +15,7 @@ public class UserModel implements Serializable {
     private String userTitle;//标题
     private String userContent;//用户内容
     private String userContentUrl;//用户图片
+    private String userContentPhoto;//内存图片
     private String userWatchNumber;//用户观看次数
     private String userComment;//用户评论
     private String userAgree;//用户点赞
@@ -34,6 +35,13 @@ public class UserModel implements Serializable {
         this.userAgree = userAgree;
     }
 
+    public String getUserContentPhoto() {
+        return userContentPhoto;
+    }
+
+    public void setUserContentPhoto(String userContentPhoto) {
+        this.userContentPhoto = userContentPhoto;
+    }
 
     public String getUserUrl() {
         return userUrl;

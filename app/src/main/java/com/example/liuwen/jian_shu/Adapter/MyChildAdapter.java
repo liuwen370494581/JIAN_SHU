@@ -2,16 +2,17 @@ package com.example.liuwen.jian_shu.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.liuwen.jian_shu.Module.UserModel;
 import com.example.liuwen.jian_shu.R;
 import com.example.liuwen.jian_shu.Utils.GlideUtils;
+import com.example.liuwen.jian_shu.Widget.GlideCircleTransform;
 
 import java.util.List;
 
@@ -23,13 +24,11 @@ import java.util.List;
  */
 public class MyChildAdapter extends RecyclerView.Adapter<MyChildAdapter.MyViewHolder> {
     private List<UserModel> mList;
-    private List<String> mList2;
     private Context mContext;
 
 
-    public MyChildAdapter(List<UserModel> mList, List<String> mList2, Context mContext) {
+    public MyChildAdapter(List<UserModel> mList, Context mContext) {
         this.mList = mList;
-        this.mList2 = mList2;
         this.mContext = mContext;
     }
 
@@ -42,17 +41,12 @@ public class MyChildAdapter extends RecyclerView.Adapter<MyChildAdapter.MyViewHo
         notifyDataSetChanged();
     }
 
-    public void updateListPic(List<String> list) {
-        if (isListNotEmpty(list)) {
-            mList2 = list;
-        } else {
-            mList.clear();
-        }
-        notifyDataSetChanged();
+
+    public void clearAllDate() {
+        mList.clear();
     }
 
-
-    private static boolean isListNotEmpty(List list) {
+    private boolean isListNotEmpty(List list) {
         return list != null && !list.isEmpty();
     }
 
@@ -66,7 +60,7 @@ public class MyChildAdapter extends RecyclerView.Adapter<MyChildAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder viewHolder, int position) {
         UserModel model = mList.get(position);
-        GlideUtils.loadImage(viewHolder.imgUserUrl, "http:" + model.getUserUrl(), R.mipmap.ic_default_gray_avatar, R.mipmap.ic_default_gray_avatar);
+        GlideUtils.loadImage(viewHolder.imgUserUrl, "http:" + model.getUserUrl(), R.mipmap.ic_default_gray_avatar, R.mipmap.ic_default_gray_avatar,new GlideCircleTransform(mContext));
         viewHolder.tvUserName.setText(model.getUserName());
         viewHolder.tvUserTime.setText(model.getUserTime());
         viewHolder.tvUserTitle.setText(model.getUserTitle());
@@ -74,9 +68,7 @@ public class MyChildAdapter extends RecyclerView.Adapter<MyChildAdapter.MyViewHo
         viewHolder.tvUserWatchNumber.setText(model.getUserWatchNumber());
         viewHolder.tvUserComment.setText(model.getUserComment());
         viewHolder.tvUserLike.setText(model.getUserAgree());
-        if (mList2.size() != 0 && mList2.size() == mList.size()) {
-            GlideUtils.loadImage(viewHolder.ImgUserContentUrl, "http:" + mList2.get(position), R.mipmap.ic_default_gray_avatar, R.mipmap.ic_default_gray_avatar);
-        }
+        GlideUtils.loadImage(viewHolder.ImgUserContentUrl, "http:" + model.getUserContentPhoto(), R.mipmap.ic_default_gray_avatar,R.mipmap.ic_default_gray_avatar);
     }
 
     @Override
