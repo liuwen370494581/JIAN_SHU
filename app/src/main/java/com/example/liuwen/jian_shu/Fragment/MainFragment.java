@@ -78,7 +78,7 @@ public class MainFragment extends BaseFragment {
         mTab = (ColorTrackTabLayout) view.findViewById(R.id.tab);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         ivAddChannel = (ImageView) view.findViewById(R.id.iv_operation);
-        titles = UIUtils.getResources_().getStringArray(R.array.child_tabs);
+        titles = getActivity().getResources().getStringArray(R.array.child_tabs);
         mTab.setTabPaddingLeftAndRight(UIUtils.dip2Px(10), UIUtils.dip2Px(10));
         mTab.post(new Runnable() {
             @Override

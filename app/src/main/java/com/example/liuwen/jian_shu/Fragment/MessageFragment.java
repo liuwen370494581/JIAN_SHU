@@ -31,7 +31,7 @@ public class MessageFragment extends BaseFragment {
     }
 
     private void initView(View view) {
-        mGridView = view.findViewById(R.id.message_grid_view);
+        mGridView = (GridView) view.findViewById(R.id.message_grid_view);
         mAdapter = new GridViewAdapter(ProvideDate.getMessageDate(), getActivity());
         mGridView.setAdapter(mAdapter);
 

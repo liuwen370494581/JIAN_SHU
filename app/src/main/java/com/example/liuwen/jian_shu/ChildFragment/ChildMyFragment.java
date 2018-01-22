@@ -85,17 +85,7 @@ public class ChildMyFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
-        mChannelCode = getArguments().getString(Config.CHANNEL_CODE);
-        Log.e("MainActivity", mChannelCode);
-        if (mChannelCode.equals(UIUtils.getResources_().getStringArray(R.array.child_my_tabs)[0])) {
-            loadingDate(0);
-        } else if (mChannelCode.equals(UIUtils.getResources_().getStringArray(R.array.child_my_tabs)[1])) {
-            loadingDate(1);
-        } else if (mChannelCode.equals(UIUtils.getResources_().getStringArray(R.array.child_my_tabs)[2])) {
-            loadingDate(2);
-        } else if (mChannelCode.equals(UIUtils.getResources_().getStringArray(R.array.child_my_tabs)[3])) {
-            loadingDate(3);
-        }
+     loadingDate(0);
     }
 
     private void initDate() {
