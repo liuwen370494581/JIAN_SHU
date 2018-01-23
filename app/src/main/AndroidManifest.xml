@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/welcomeTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.WelcomeActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden">
@@ -25,6 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".Activity.AdActivity" />
     </application>
 
 </manifest>

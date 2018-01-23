@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements BottomTabBar.OnSe
     private MessageFragment messageFragment;
     private MyFragment myFragment;
     private FragmentManager manager;
-    private long firstTime = 0;
 
 
     @Override

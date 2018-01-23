@@ -18,6 +18,7 @@ import com.example.liuwen.jian_shu.Jsoup.Action.MyAction;
 import com.example.liuwen.jian_shu.Module.UserModel;
 import com.example.liuwen.jian_shu.R;
 import com.example.liuwen.jian_shu.Utils.UIUtils;
+import com.example.liuwen.jian_shu.Widget.Views.ShimmerRecyclerView;
 import com.liaoinstan.springview.container.DefaultFooter;
 import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
@@ -34,11 +35,9 @@ import java.util.List;
  */
 public class ChildMyFragment extends BaseFragment {
 
-    private String mChannelCode;
-    private RecyclerView mRecyclerView;
+    private ShimmerRecyclerView mRecyclerView;
     private MyChildAdapter myChildAdapter;
     private List<UserModel> mList = new ArrayList<>();
-    private FrameLayout mFlContent;
     private SpringView mSpringView;
 
     @Nullable
@@ -52,9 +51,8 @@ public class ChildMyFragment extends BaseFragment {
 
 
     private void initView(View view) {
-        //mFlContent = (FrameLayout) view.findViewById(R.id.fl_content);
         mSpringView = (SpringView) view.findViewById(R.id.my_springView);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
+        mRecyclerView = (ShimmerRecyclerView) view.findViewById(R.id.shimmer_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(UIUtils.getContext()));
         myChildAdapter = new MyChildAdapter(mList, getActivity());
         mRecyclerView.setAdapter(myChildAdapter);
@@ -63,7 +61,7 @@ public class ChildMyFragment extends BaseFragment {
     }
 
     private void initReflash() {
-       mSpringView.setType(SpringView.Type.FOLLOW);
+        mSpringView.setType(SpringView.Type.FOLLOW);
         mSpringView.setListener(new SpringView.OnFreshListener() {
             @Override
             public void onRefresh() {
@@ -85,7 +83,7 @@ public class ChildMyFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
-     loadingDate(0);
+        loadingDate(0);
     }
 
     private void initDate() {
@@ -93,11 +91,13 @@ public class ChildMyFragment extends BaseFragment {
     }
 
     protected void loadingDate(int position) {
+        mRecyclerView.showShimmerAdapter();
         switch (position) {
             case 0:
                 MyAction.searchMyDate(getActivity(), "https://www.jianshu.com/u/18740e093fcb", new ActionCallBack() {
                     @Override
                     public void ok(Object object) {
+                        mRecyclerView.hideShimmerAdapter();
                         mList.addAll((Collection<? extends UserModel>) object);
                         myChildAdapter.updateList(mList);
                     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,12 +11,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/my_recycler_view"
+        <com.example.liuwen.jian_shu.Widget.Views.ShimmerRecyclerView
+            android:id="@+id/shimmer_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            app:shimmer_demo_layout="@layout/layout_demo"
+            app:shimmer_demo_shimmer_color="#21ffffff" />
     </com.liaoinstan.springview.widget.SpringView>
 </LinearLayout>

@@ -8,6 +8,7 @@ package com.example.liuwen.jian_shu.Base;
  */
 public class Config {
 
+    public static final String FistStar = "FirstStar";
     public static final String TAG = "MainActivity";
     public static final String CHANNEL_CODE = "channelCode";
 
